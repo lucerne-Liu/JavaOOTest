@@ -1,7 +1,7 @@
 package practice10;
 
 
-import com.sun.deploy.util.StringUtils;
+//import org.apache.commons.lang3.StringUtils;
 
 import java.util.*;
 
@@ -33,10 +33,27 @@ public class Teacher extends Person {
         String content = "No Class";
         if (classes.size() > 0) {
             List<String> classList = new ArrayList<>();
-            classes.stream().forEach(item -> classList.add(String.valueOf(item.getNumber())));
-            content = "Class " + StringUtils.join(classList, ", ");
+
+            //更改为不使用StringUtils.join()
+//            classes.stream().forEach(item -> classList.add(String.valueOf(item.getNumber())));
+//            content = "Class " + StringUtils.join(classList, ", ");
+
+            content = "Class " + join(classes.stream().mapToInt(item -> item.getNumber()).sorted().toArray(), ", ");
         }
         return PREFIX + "teach " + content + SUFFIX;
+    }
+
+    //替代org.apache.commons.lang3.StringUtils的join方法
+    public String join(int[] array, String separator) {
+        int len = array.length;
+        StringBuilder buf = new StringBuilder(len * 16);
+        for (int i = 0; i < len; i++) {
+            if (i > 0) {
+                buf.append(separator);
+            }
+            buf.append(array[i]);
+        }
+        return buf.toString();
     }
 
     public String introduceWith(Student student) {
