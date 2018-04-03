@@ -1,3 +1,4 @@
+
 写一个Person类，要有id，name，age属性，靠id来判断是否是同一个人。要有一个introduce方法，
 introduce方法返回一个字符串形如：
 
