@@ -24,7 +24,7 @@ public class Teacher extends Person {
 
     @Override
     public String introduce() {
-        return PREFIX + "teach " + (klass != null ? "Class " + klass.getNumber() : "No Class") + SUFFIX;
+        return PREFIX + "teach " + (klass != null ? klass.getDisplayName() : "No Class") + SUFFIX;
     }
 
     public String introduceWith(Student student) {

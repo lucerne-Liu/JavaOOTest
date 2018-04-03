@@ -1,7 +1,5 @@
 package practice08;
 
-import org.fest.assertions.core.AssertionInfo;
-
 public class Person {
     private int id;
     private String name;
