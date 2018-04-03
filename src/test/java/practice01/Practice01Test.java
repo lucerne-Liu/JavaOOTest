@@ -9,7 +9,7 @@ public class Practice01Test {
     public void should_person_have_name_and_age() throws Exception {
         Person person = new Person("Tom", 21);
         assertThat(person.getName()).isEqualTo("Tom");
-        assertThat(person.getAge()).isEqualTo(git21);
+        assertThat(person.getAge()).isEqualTo(21);
     }
 
     // 打开注释以继续
