@@ -6,6 +6,6 @@ public class Worker extends Person{
     }
     @Override
     public String introduce() {
-        return new Person(getName(),getAge()).introduce() + " I am a Worker. I have a job.";
+        return super.introduce() + " I am a Worker. I have a job.";
     }
 }
