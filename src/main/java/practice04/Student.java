@@ -18,6 +18,6 @@ public class Student extends Person{
 
     @Override
     public String introduce() {
-        return new Person(getName(),getAge()).introduce() + " I am a Student. I am at Class " + klass + ".";
+        return super.introduce() + " I am a Student. I am at Class " + klass + ".";
     }
 }
